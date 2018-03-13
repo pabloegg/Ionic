@@ -1,0 +1,108 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Create Account</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label fixed>Username</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Email</ion-label>
+      <ion-input type="text"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Password</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label fixed>Confirm</ion-label>
+      <ion-input type="password"></ion-input>
+    </ion-item>
+    
+  </ion-list>
+
+
+  <form (submit)="doSubmit($event)" [formGroup]="langForm">
+    <ion-list radio-group formControlName="langs">
+
+      <ion-item>
+        <ion-label>Demo</ion-label>
+        <ion-radio value="golang" checked="true" color="danger"></ion-radio>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Premium</ion-label>
+        <ion-radio value="rust" color="danger"></ion-radio>
+      </ion-item>
+
+    </ion-list>
+  </form>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Gender</ion-label>
+
+      <ion-select [(ngModel)]="gender" >
+        <ion-option value="f">Female</ion-option>
+        <ion-option value="m">Male</ion-option>
+      </ion-select>
+
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Gaming</ion-label>
+        <ion-select [(ngModel)]="gaming" interface="popover">
+          <ion-option value="nes">NES</ion-option>
+          <ion-option value="n64">SNES</ion-option>
+          <ion-option value="ps">Nintendo64</ion-option>
+          <ion-option value="genesis">Gamecube</ion-option>
+          <ion-option value="saturn">Wii</ion-option>
+          <ion-option value="snes">Wii U</ion-option>
+          <ion-option value="snes">Switch</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-label>Notifications</ion-label>
+      <ion-toggle color="danger" value="foo" checked="true"></ion-toggle>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Handheld game console</ion-label>
+      <ion-checkbox color="danger" checked="true"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Home video game console</ion-label>
+      <ion-checkbox color="danger" checked="true"></ion-checkbox>
+    </ion-item>
+
+
+    <ion-list>
+        <ion-item>
+          <ion-label>Birthday</ion-label>
+          <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month"></ion-datetime>
+        </ion-item>
+    
+    
+        <ion-item>
+          <ion-label>Local hour</ion-label>
+          <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.timeStarts"></ion-datetime>
+        </ion-item>
+      </ion-list>
+          
+
+</ion-content>
